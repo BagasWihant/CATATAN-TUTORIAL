@@ -1,11 +1,9 @@
-Guide to install a LAMP system on on your **archlinux** system and serve php-based database applications.    
+Guide to install a LAMP system on **archlinux**    
 ***LAMP*** stands for a **Linux** system with **Apache** (webserver), **MariaDB** (database) and **PHP** (programming language). In this guide we will also install **PhpMyAdmin** (database admin GUI) to easily manage the SQL tables.
 
 # Apache
 
 ![apache logo](https://upload.wikimedia.org/wikipedia/commons/thumb/1/10/Apache_HTTP_server_logo_%282019-present%29.svg/300px-Apache_HTTP_server_logo_%282019-present%29.svg.png)
-
-*The Apache HTTP Server is an open-source and free product of the Apache Software Foundation and one of the most widely used web servers on the Internet. In addition to factors such as performance, expandability, security, freedom from license costs and support from a very large community, its long-term availability for a wide variety of operating systems is one of the reasons for its widespread use; it is most frequently used as a LAMP system.*
 
 ## Install packages
 
@@ -16,9 +14,6 @@ Guide to install a LAMP system on on your **archlinux** system and serve php-bas
 
 The main **Apache configuration file** is located at `/etc/httpd/conf/httpd.conf`
 The default **Document Root** is `/srv/http`. The webserver will serve all files that are located under this folder. 
-
-> On linux lammp installation the `httpd.conf` is located at `/opt/lampp/etc/httpd.conf`    
-> The default Document root is: `/opt/lampp/htdocs`
 
 Make sure to restart apache after a configuration to see it's effects:
 
@@ -68,7 +63,6 @@ chmod 711 /home/username/
 # PHP
 
 ![php logo](https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/PHP-logo.svg/300px-PHP-logo.svg.png)   
-*PHP (for "PHP: Hypertext Preprocessor") is a scripting language with a syntax based on C and Perl, which is mainly used to create dynamic websites or web applications. PHP is distributed as free software under the PHP license. PHP is characterized by broad database support and Internet protocol integration as well as the availability of numerous function libraries.*
 
 ## Install Packages
 
@@ -86,6 +80,11 @@ You can also enable error reporting in `.htaccess` file: `php_flag display_error
 
 > **⚠️ Attention:** you should not display errors in productive environments.
 
+### install sql server extension
+
+```
+yay php-sqlsrv php-pdo_sqlsrv
+```
 
 ### Sql Module
 If you want to use MySql operations in your PHP scripts to connect to a MySQL database, uncomment these lines in **php.ini**:
