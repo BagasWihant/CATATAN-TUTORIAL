@@ -82,6 +82,20 @@ You can also enable error reporting in `.htaccess` file: `php_flag display_error
 
 ### install sql server extension
 
+#### make sure autoconf, base-devel and yay installed
+
+```
+sudo pacman -S glibc lib32-glibc yay
+```
+```
+sudo pacman -S autoconf
+```
+```
+sudo pacman -S --needed base-devel
+```
+
+#### then install
+
 ```
 yay php-sqlsrv php-pdo_sqlsrv
 ```
