@@ -8,3 +8,6 @@
 
 ### aksi mengembalikan 
 	sudo docker exec -it {nama_container} /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P 'passwirdnya' -Q 'RESTORE DATABASE {nama_db} FROM DISK = "{lokasi_file}" WITH MOVE "{variabel_ndf}" TO "/var/opt/mssql/data/{nama_db}.ndf", MOVE "{variabel_log}" TO "/var/opt/mssql/data/{nama_db}_log.ldf", REPLACE'
+
+### user root user in docker 
+	docker exec -it -u 0 {nama_container} bash
